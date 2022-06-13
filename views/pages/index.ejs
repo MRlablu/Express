@@ -1,0 +1,20 @@
+    <%- include('../partials/header.ejs',{title:'I am Home page'}) %>
+    <%- include('../partials/nav.ejs') %>
+    <h1>
+        <%= title %>
+    </h1>
+    <%- include('../partials/p.ejs') %>
+    <%= new Date().toString() %>
+
+
+        <% if(post.published) { %>
+            <h3>Title: <%= post.title %> </h3>
+            <p>Body : <%= post.body %>  </p> 
+
+            <% } %>
+
+            <%  for(let p of posts) {%>
+            <p>Title: <%= p.title %> By <%=p.author %></p>
+
+         <% } %>
+         <%- include('../partials/footer.ejs') %>
